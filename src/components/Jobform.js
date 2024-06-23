@@ -18,7 +18,7 @@ const Jobform = () => {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
+  console.log(submitted)
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     if (type === 'checkbox') {
@@ -126,10 +126,10 @@ const Jobform = () => {
         <div >
           <label>Applying for Position:</label>
           <select name="position" value={formData.position} onChange={handleChange} >
-            <option style={{color:"black"}} value="">Select</option>
-            <option style={{color:"black"}} value="Developer">Developer</option>
-            <option style={{color:"black"}} value="Designer">Designer</option>
-            <option style={{color:"black"}} value="Manager">Manager</option>
+            <option style={{ color: "black" }} value="">Select</option>
+            <option style={{ color: "black" }} value="Developer">Developer</option>
+            <option style={{ color: "black" }} value="Designer">Designer</option>
+            <option style={{ color: "black" }} value="Manager">Manager</option>
           </select>
           {errors.position && <p className="error">{errors.position}</p>}
         </div>
@@ -175,7 +175,7 @@ const Jobform = () => {
         <div>
           <label>Additional Skills:</label>
           <div>
-          <label>
+            <label>
               <input
                 type="checkbox"
                 name="additionalSkills"
@@ -275,7 +275,7 @@ const Jobform = () => {
               />
               MySQL
             </label>
-            
+
           </div>
           {errors.additionalSkills && <p className="error">{errors.additionalSkills}</p>}
         </div>
